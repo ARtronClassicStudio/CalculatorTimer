@@ -4,7 +4,13 @@ This calculator has only one function, but it is extremely useful, it is intende
 ![](res/priew.gif)
 
 
+```diff
+Warrning! TimeCalculato is deprecated, use instead GetTime()
+```
+
 # example:
+
+
 
 ```C#
 using UnityEngine;
@@ -23,7 +29,8 @@ public class TestScript : MonoBehaviour
     
     private void Update()
     {
-        length = CalculatorTimer.TimeCalculator(length,hour,minute,second);
+        //length = CalculatorTimer.TimeCalculator(length, hour, minute, second);
+        length = CalculatorTimer.GetTime(hour,minute,second);
         textTime = System.TimeSpan.FromSeconds(length).ToString();
     }
 }
