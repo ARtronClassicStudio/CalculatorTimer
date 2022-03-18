@@ -1,9 +1,10 @@
-public struct CalculatorTimer 
+public struct CalculatorTimer
 {
     private static int Hour { set; get; }
     private static int Minute { set; get; }
 
-  public static int TimeCalculator(int value, int hour=32, int minute=59, int second=59)
+    [System.Obsolete("use instead GetTime()")]
+    public static int TimeCalculator(int value, int hour = 32, int minute = 59, int second = 59)
     {
 
         switch (hour)
@@ -12,75 +13,75 @@ public struct CalculatorTimer
                 Hour = 0;
                 break;
             case 1:
-               Hour = 3600;
+                Hour = 3600;
                 break;
             case 2:
-               Hour = 7200;
+                Hour = 7200;
                 break;
             case 3:
-               Hour = 10800;
+                Hour = 10800;
                 break;
             case 4:
-               Hour = 14400;
+                Hour = 14400;
                 break;
             case 5:
-               Hour = 18000;
+                Hour = 18000;
                 break;
             case 6:
-               Hour = 21600;
+                Hour = 21600;
                 break;
             case 7:
-               Hour = 25200;
+                Hour = 25200;
                 break;
             case 8:
-               Hour =28800;
+                Hour = 28800;
                 break;
             case 9:
-               Hour =32400;
+                Hour = 32400;
                 break;
             case 10:
-               Hour =36000;
+                Hour = 36000;
                 break;
             case 11:
-               Hour =39600;
+                Hour = 39600;
                 break;
             case 12:
-               Hour =43200;
+                Hour = 43200;
                 break;
             case 13:
-               Hour =46800;
+                Hour = 46800;
                 break;
             case 14:
-               Hour =50400;
+                Hour = 50400;
                 break;
             case 15:
-               Hour =54000;
+                Hour = 54000;
                 break;
             case 16:
-               Hour =57600;
+                Hour = 57600;
                 break;
             case 17:
-               Hour =61200;
+                Hour = 61200;
                 break;
             case 18:
-               Hour =64800;
+                Hour = 64800;
                 break;
             case 19:
-               Hour =68400;
+                Hour = 68400;
                 break;
             case 20:
-               Hour =72000;
+                Hour = 72000;
                 break;
             case 21:
-               Hour =75600;
+                Hour = 75600;
                 break;
             case 22:
-               Hour =79200;
+                Hour = 79200;
                 break;
             case 23:
-               Hour =82800;
+                Hour = 82800;
                 break;
-                }
+        }
         switch (minute)
         {
             case 0:
@@ -265,8 +266,7 @@ public struct CalculatorTimer
                 break;
         }
 
-        value = Hour + Minute + second;
-
-        return value;
+        return value = Hour + Minute + second;
     }
+    public static int GetTime(int hour = 32, int minute = 59, int second = 59) => hour * 3600 + minute * 60 + second;
 }
